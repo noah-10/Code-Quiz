@@ -1,0 +1,45 @@
+header {
+    height: 5rem;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    font-size: 125%;
+    background-color: bisque;
+}
+
+#high-score {
+    margin: auto 0 auto 2rem;
+
+}
+
+#timer {
+    margin: auto 2rem auto auto;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
+    text-align: center;
+    justify-content: center;
+}
+
+h1 {
+    margin-bottom: 1rem;
+}
+
+main p {
+    margin-bottom: 2rem;
+}
+
+button {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
