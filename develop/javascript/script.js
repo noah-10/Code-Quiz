@@ -80,7 +80,7 @@ function startQuiz() {
 
     var optionFour = document.createElement("p");
     optionFour.id = "option-four";
-    optionFour.className = "quiz-options";
+    optionFour.className ="quiz-options";
     document.querySelector("#question-section").appendChild(optionFour);
 
     var optionClass = document.querySelectorAll(".quiz-options")
@@ -89,6 +89,7 @@ function startQuiz() {
     for(var i = 0; i < optionClass.length; i++){
         optionClass[i].setAttribute("style", "border: var(--header) solid 1px; padding:1rem; width: 50%; margin-left: auto; margin-right: auto; color: var(--header-font); background-color: var(--header); border-radius: 15px");
     }
+    
 
     // start the first question function
     firstJavaQuestion()

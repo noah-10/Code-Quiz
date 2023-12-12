@@ -2,6 +2,7 @@
 :root {
     --header-font: #FFFBF5;
     --header: #27374D;
+    --button-hover: #96B6C5;
 }
 
 /* layout and color for header section */
@@ -18,7 +19,15 @@ header {
 /* positioning for the view high scores */
 #high-score {
     margin: auto 0 auto 2rem;
+    transition: 0.5s ease font-size;
 
+}
+
+/* added hovering effect */
+#high-score:hover{
+    cursor: pointer;
+    font-size: 110%;
+    
 }
 
 /* positioning for the timer */
@@ -68,7 +77,25 @@ button {
     color: var(--header-font);
     background-color: var(--header);
     font-size: large;
-    
+    transition: 0.5s ease background-color, color, border;
+}
+
+/* adding hover effect  */
+button:hover {
+    cursor: pointer;
+    color: black;
+    background-color: var(--button-hover);
+    border: var(--button-hover) solid 1px;
+}
+
+/* changes mouse display when hovering */
+.quiz-options:hover {
+    cursor: pointer;
+}
+
+/* changes mouse display when hovering */
+#inital-submit:hover{
+    cursor: pointer;
 }
 
 /* when on a small screen, the header font size will decrease */
