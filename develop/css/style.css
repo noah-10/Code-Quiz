@@ -1,10 +1,19 @@
+:root {
+    --header-font: #FFFBF5;
+    --header: #27374D;
+    --background:
+    --button:
+}
+
+
 header {
     height: 5rem;
     width: 100%;
     display: flex;
     flex-direction: row;
     font-size: 125%;
-    background-color: bisque;
+    color: var(--header-font);
+    background-color: var(--header);
 }
 
 #high-score {
@@ -27,12 +36,18 @@ main {
     justify-content: center;
 }
 
+#main-page{
+    height: 40rem;
+}
+
 h1 {
-    margin-bottom: 1rem;
+    margin: 1rem 0;
+    font-size: 4rem;
 }
 
 main p {
-    margin-bottom: 2rem;
+    margin: 2rem 3rem;
+    font-size: 1.25rem;
 }
 
 button {
@@ -41,5 +56,15 @@ button {
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
+    padding: 1rem;
+    border-radius: 15px;
+    border: 1px solid var(--header);
+    color: var(--header-font);
+    background-color: var(--header);
+    font-size: large;
     
+}
+
+@media screen and (max-width: 320px) {
+    header {font-size: 100%;}
 }

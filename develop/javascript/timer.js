@@ -7,7 +7,7 @@ function startTimer(){
     var timer = setInterval(function(){
         
         timerCount--;
-        timeElement.textContent = timerCount;
+        timeElement.textContent = "Time left: " + timerCount;
 
         if(timerCount > 0 && complete === true){
             clearInterval(timer);

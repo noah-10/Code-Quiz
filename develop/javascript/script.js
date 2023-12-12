@@ -3,7 +3,7 @@ var mainPage = document.querySelector("#main-page")
 var startButton = document.querySelector("#button")
 
 var questionOne = {
-    question:"Commonly used data types DO NOT INClUDE:",
+    question:"Commonly used data types DO NOT INCLUDE:",
     options: ["String", "Alert", "Boolean", "Number"],
     answer: "Alert"
 };
@@ -21,7 +21,7 @@ var questionThree = {
 };
 
 var questionFour = {
-    question:"String values must be enclosed within ___ when being assigned to vairbales",
+    question:"String values must be enclosed within ___ when being assigned to variables",
     options: ["Commas", "Curly brackets", "Quotes", "Parenthesis"],
     answer: "Quotes"
 };
@@ -38,10 +38,14 @@ var amountCorrect = 0;
 
 var complete = false;
 
+var questionsShown = false;
+
 function startQuiz() {
 
     // Removes the main section from document
     mainPage.setAttribute("style", "display: none");
+
+    questionsShown = true;
 
     questionSect = document.createElement("section");
     questionSect.id = "question-section"
@@ -50,25 +54,36 @@ function startQuiz() {
     var question = document.createElement("h1");
     question.id = "question";
     document.querySelector("#question-section").appendChild(question);
+    question.setAttribute("style", "font-size: 2.5rem;");
 
     var optionOne = document.createElement("p");
     optionOne.id = "option-one";
+    optionOne.className = "quiz-options";
     document.querySelector("#question-section").appendChild(optionOne);
 
 
     var optionTwo = document.createElement("p");
     optionTwo.id = "option-two";
+    optionTwo.className = "quiz-options";
     document.querySelector("#question-section").appendChild(optionTwo);
 
 
     var optionThree = document.createElement("p");
     optionThree.id = "option-three";
+    optionThree.className = "quiz-options";
     document.querySelector("#question-section").appendChild(optionThree);
 
 
     var optionFour = document.createElement("p");
     optionFour.id = "option-four";
+    optionFour.className = "quiz-options";
     document.querySelector("#question-section").appendChild(optionFour);
+
+    var optionClass = document.querySelectorAll(".quiz-options")
+
+    for(var i = 0; i < optionClass.length; i++){
+        optionClass[i].setAttribute("style", "border: var(--header) solid 1px; padding:1rem; width: 50%; margin-left: auto; margin-right: auto; color: var(--header-font); background-color: var(--header); border-radius: 15px");
+    }
 
     firstJavaQuestion()
 
@@ -79,6 +94,7 @@ function startQuiz() {
     document.querySelector("#option-two").textContent = questionOne.options[1];
     document.querySelector("#option-three").textContent = questionOne.options[2];
     document.querySelector("#option-four").textContent = questionOne.options[3];
+
 
     optionOne.value = "String";
     optionTwo.value = "Alert";
