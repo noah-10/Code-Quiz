@@ -127,6 +127,8 @@ function highScores(){
         questionSect.setAttribute("style", "display: none");
     }
 
+    viewHighScores.setAttribute("style", "display: none");
+
     timeElement.remove();
 
     // creating the display and text for the page, also some styling
