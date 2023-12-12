@@ -1,11 +1,10 @@
+/* Reusable css  */
 :root {
     --header-font: #FFFBF5;
     --header: #27374D;
-    --background:
-    --button:
 }
 
-
+/* layout and color for header section */
 header {
     height: 5rem;
     width: 100%;
@@ -16,15 +15,18 @@ header {
     background-color: var(--header);
 }
 
+/* positioning for the view high scores */
 #high-score {
     margin: auto 0 auto 2rem;
 
 }
 
+/* positioning for the timer */
 #timer {
     margin: auto 2rem auto auto;
 }
 
+/* positions the main section into a column and centers everything */
 main {
     display: flex;
     flex-direction: column;
@@ -36,20 +38,24 @@ main {
     justify-content: center;
 }
 
+/* change height */
 #main-page{
     height: 40rem;
 }
 
+/* change margin for top and bottom, also font size */
 h1 {
     margin: 1rem 0;
     font-size: 4rem;
 }
 
+/* margin on all sides and change font size */
 main p {
     margin: 2rem 3rem;
     font-size: 1.25rem;
 }
 
+/* centers the button, change size and color */
 button {
     width: 30%;
     display: flex;
@@ -65,6 +71,7 @@ button {
     
 }
 
+/* when on a small screen, the header font size will decrease */
 @media screen and (max-width: 320px) {
     header {font-size: 100%;}
 }

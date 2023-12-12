@@ -1,7 +1,8 @@
-
+// selecting elements
 var mainPage = document.querySelector("#main-page")
 var startButton = document.querySelector("#button")
 
+// creating objects with key pairs for each question
 var questionOne = {
     question:"Commonly used data types DO NOT INCLUDE:",
     options: ["String", "Alert", "Boolean", "Number"],
@@ -32,6 +33,7 @@ var questionFive = {
     answer: "Console.log"
 };
 
+// creating variables that will later be used for functionality
 var elem = "";
 
 var amountCorrect = 0;
@@ -45,8 +47,10 @@ function startQuiz() {
     // Removes the main section from document
     mainPage.setAttribute("style", "display: none");
 
+    // if this is true and then view high scores is clicked the question section will not be visibal
     questionsShown = true;
 
+    // creating layout for the quiz
     questionSect = document.createElement("section");
     questionSect.id = "question-section"
     document.querySelector("#container").appendChild(questionSect);
@@ -81,13 +85,16 @@ function startQuiz() {
 
     var optionClass = document.querySelectorAll(".quiz-options")
 
+    // styling for all quiz options
     for(var i = 0; i < optionClass.length; i++){
         optionClass[i].setAttribute("style", "border: var(--header) solid 1px; padding:1rem; width: 50%; margin-left: auto; margin-right: auto; color: var(--header-font); background-color: var(--header); border-radius: 15px");
     }
 
+    // start the first question function
     firstJavaQuestion()
 
     function firstJavaQuestion(){
+    // selecting each element that was created for layout and adding text to it that is from the objects created for each question
     document.querySelector("#question").textContent = questionOne.question;
 
     document.querySelector("#option-one").textContent = questionOne.options[0];
@@ -96,26 +103,27 @@ function startQuiz() {
     document.querySelector("#option-four").textContent = questionOne.options[3];
 
 
+    // assigning each option a value that will be checked to see if user select was correct
     optionOne.value = "String";
     optionTwo.value = "Alert";
     optionThree.value = "Boolean";
     optionFour.value = "Number";
 
+    // when user picks option, it starts the function to check if answer was correct
     optionOne.addEventListener("click", getAnswer);
     optionTwo.addEventListener("click", getAnswer);
     optionThree.addEventListener("click", getAnswer);
     optionFour.addEventListener("click", getAnswer);
 
+    // also when user picks a option, it will start the next question
     optionOne.addEventListener("click", secondJavaQuestion);
     optionTwo.addEventListener("click", secondJavaQuestion);
     optionThree.addEventListener("click", secondJavaQuestion);
     optionFour.addEventListener("click", secondJavaQuestion);
-
-    // assign each option a value and create a event target to see if that value gets clicked
-    // maybe even have it include the answer propery in the variable
     }
 
     function secondJavaQuestion(){
+    // changing each element so it is all relevent to the current question and assigning values
     document.querySelector("#question").textContent = questionTwo.question;
 
     document.querySelector("#option-one").textContent = questionTwo.options[0];
@@ -130,11 +138,13 @@ function startQuiz() {
     document.querySelector("#option-four").textContent = questionTwo.options[3];
     optionFour.value = "Square brackets"
 
+    // when user picks option, it starts the function to check if answer was correct
     optionOne.addEventListener("click", getAnswer);
     optionTwo.addEventListener("click", getAnswer);
     optionThree.addEventListener("click", getAnswer);
     optionFour.addEventListener("click", getAnswer);
 
+    // also when user picks a option, it will start the next question
     optionOne.addEventListener("click", thirdJavaQuestion);
     optionTwo.addEventListener("click", thirdJavaQuestion);
     optionThree.addEventListener("click", thirdJavaQuestion);
@@ -142,6 +152,7 @@ function startQuiz() {
     }
 
     function thirdJavaQuestion(){
+    // changing each element so it is all relevent to the current question and assigning values
     document.querySelector("#question").textContent = questionThree.question;
 
     document.querySelector("#option-one").textContent = questionThree.options[0];
@@ -156,11 +167,13 @@ function startQuiz() {
     document.querySelector("#option-four").textContent = questionThree.options[3];
     optionFour.value = "All of the above";
 
+    // when user picks option, it starts the function to check if answer was correct
     optionOne.addEventListener("click", getAnswer);
     optionTwo.addEventListener("click", getAnswer);
     optionThree.addEventListener("click", getAnswer);
     optionFour.addEventListener("click", getAnswer);
 
+    // also when user picks a option, it will start the next question
     optionOne.addEventListener("click", fourthJavaQuestion);
     optionTwo.addEventListener("click", fourthJavaQuestion);
     optionThree.addEventListener("click", fourthJavaQuestion);
@@ -168,6 +181,7 @@ function startQuiz() {
     }
 
     function fourthJavaQuestion(){
+    // changing each element so it is all relevent to the current question and assigning values
     document.querySelector("#question").textContent = questionFour.question;
 
     document.querySelector("#option-one").textContent = questionFour.options[0];
@@ -182,11 +196,13 @@ function startQuiz() {
     document.querySelector("#option-four").textContent = questionFour.options[3];
     optionFour.value = "Parenthesis";
 
+    // when user picks option, it starts the function to check if answer was correct
     optionOne.addEventListener("click", getAnswer);
     optionTwo.addEventListener("click", getAnswer);
     optionThree.addEventListener("click", getAnswer);
     optionFour.addEventListener("click", getAnswer);
 
+    // also when user picks a option, it will start the next question
     optionOne.addEventListener("click", fifthJavaQuestion);
     optionTwo.addEventListener("click", fifthJavaQuestion);
     optionThree.addEventListener("click", fifthJavaQuestion);
@@ -194,6 +210,7 @@ function startQuiz() {
     }
 
     function fifthJavaQuestion(){
+    // changing each element so it is all relevent to the current question and assigning values
     document.querySelector("#question").textContent = questionFive.question;
 
     document.querySelector("#option-one").textContent = questionFive.options[0];
@@ -208,11 +225,13 @@ function startQuiz() {
     document.querySelector("#option-four").textContent = questionFive.options[3];
     optionFour.value = "Console.log";
 
+    // when user picks option, it starts the function to check if answer was correct
     optionOne.addEventListener("click", getAnswer);
     optionTwo.addEventListener("click", getAnswer);
     optionThree.addEventListener("click", getAnswer);
     optionFour.addEventListener("click", getAnswer);
 
+    // also when user picks a option, it will start the next question
     optionOne.addEventListener("click", scorePage);
     optionTwo.addEventListener("click", scorePage);
     optionThree.addEventListener("click", scorePage);
@@ -221,16 +240,17 @@ function startQuiz() {
 
 }
 
+// checks the value of the option the user picked and compares it with the answer key pair in the objects
 function getAnswer(event){
     elem = event.target.value;
+    // if right it will add 1 to the amount correct that will be displayed at the end as "amountCorrect/5"
     if(questionOne.answer == elem  || questionTwo.answer == elem || questionThree.answer == elem || questionFour.answer == elem || questionFive.answer == elem){
         amountCorrect++
     }else{
+        // if wrong it will start the function wrongAnswer which will subtract time for the counter
         wrongAnswer()
     }
 }
 
-
-
-
+// event listener for when to start the quiz
 startButton.addEventListener("click", startQuiz);
